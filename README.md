@@ -1,6 +1,4 @@
-# election_analysis
-
-## Overview of Election Audit
+# Overview of Election Audit
 
 Overview of Election Audit: Explain the purpose of this election audit analysis.
 
@@ -11,6 +9,9 @@ Overview of Election Audit: Explain the purpose of this election audit analysis.
 Use images or examples of your code as support where necessary.
 
 * In this election there were a total of 369,711 votes cast.
+         * to fine this we used the code: `code(for row in reader:
+        # Add to the total vote count
+        total_votes = total_votes + 1)`  
 * For each county in the precinct:
     * Jefferson had 38,855 votes which was 10.5% of all votes
     * Denver residents cast 306,055 votes resulting in 82.8% of the votes 
