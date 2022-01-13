@@ -48,7 +48,7 @@ with open(file_to_load) as election_data:
         candidate_name = row[2]
 
         # 3: Extract the county name from each row.
-        county_name = row[0]
+        county_name = row[1]
 
         # If the candidate does not match any existing candidate add it to
         # the candidate list
@@ -95,7 +95,7 @@ with open(file_to_save, "w") as txt_file:
     for county_name in County_votes:
 
         # 6b: Retrieve the county vote count.
-        county_votes = County_options.get(county_name)
+        county_votes = County_votes[county_name]
         # 6c: Calculate the percentage of votes for the county.
         County_vote_percentage = float(county_votes) / float(total_votes) * 100
         county_results = (
@@ -106,7 +106,7 @@ with open(file_to_save, "w") as txt_file:
         txt_file.write(county_results)
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (county_votes > county_winning_count) and (County_vote_percentage > county_winning_percentage):
+        if (county_votes > county_winning_percentage) and (County_vote_percentage > county_winning_percentage):
             county_winning_count = county_votes
             Largest_county = county_name
             county_winning_percentage = County_vote_percentage
@@ -156,4 +156,3 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
-
